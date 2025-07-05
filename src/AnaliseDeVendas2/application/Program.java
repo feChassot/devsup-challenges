@@ -30,7 +30,7 @@ public class Program {
             }
 
             Map<String, Double> totalPerSeller = list.stream()
-                    .collect(Collectors.groupingBy(s -> s.getSeller(), Collectors.summingDouble(s -> s.getTotal())));
+                    .collect(Collectors.groupingBy(Sale::getSeller, Collectors.summingDouble(s -> s.getTotal())));
 
             System.out.println("\nTotal de vendas por vendedor: ");
 
